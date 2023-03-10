@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root{
+    --main-ctc-color: #4F52C9;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 1em;
+    background-color: var(--main-ctc-color);
+    margin-bottom: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+header > img{
+    float: left;
+}
+header > svg{
+    float: right;
+    display: none;
+}
+
+header > svg:hover{
+    transform: scale(1.2);
+}
+
+header > input:nth-of-type(1){
+    box-sizing: border-box;
+    position: absolute;
+    padding: 1em;
+    top: 6.2em;
+    left: 0;
+    width: 100% ;
+    display: none;
+}
+
+header > p{
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+}
+
+.directionsButton{
+    width: 3em;
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+#map{
+    margin-top: 2em;
+    width: 60em;
+    height: 45em;
+
+}
+
+main{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#big-wrapper{
+    position: relative;
+    overflow: hidden;
+
+}
+#big-list{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 20em;
+    width: 20em;
+    background-color: var(--main-ctc-color);
+    color: white;
+    position: relative;
+    top: -1em;
+    padding: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 45em;
+    left: 0em;
+    margin-top: 3em;
+}
+
+#big-list > li:nth-of-type(1), #big-list > li:nth-of-type(2){
+   flex-basis: 20%;
+   padding: 2em;
+}
+
+#big-list > li:nth-of-type(1)::after, #big-list > li:nth-of-type(2)::after{
+    background: var(--main-ctc-color);
+ }
+
+#big-list > li:nth-of-type(1) button, #big-list > li:nth-of-type(2) button{
+    padding: .5em 2em .5em 2em;
+    transform: translateX(-80%);
+
+}
+
+#side-wrapper{
+    position: absolute;
+    height: 20em;
+    top: 0;
+    max-height: 38em;
+    left: 0;
+    transition: .2s ease;
+}
+
+li{
+    position: relative;
+    list-style-type: none;
+    flex-grow: 1;
+}
+
+li::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: white;
+    width: 90%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: .5em;
+}
+
+li> p{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+li> button{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    border-radius: 10%;
+    border: none;
+    color: var(--main-ctc-color);
+}
+
+li> button:hover{
+    background-color: var(--main-ctc-color);
+    transition: ease .2s;
+    color: white;
+    outline: 1px solid white;
+}
+li> p:nth-of-type(1){
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+}
+
+.lowFill{
+    color: greenyellow;
+}
+
+.mediumFill{
+    color: #FFDD00;
+}
+
+.highFill{
+    color: #E00000;
+}
+
+#side-out{
+    width: 2em;
+    height: 5em;
+    position: absolute;
+    top: 100%; 
+    left: 100%;  
+    background-image: url(/images/left-with-straight-arrow.png); /* <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a> */
+    background-repeat: no-repeat;
+    background-color: #00ffec;
+    background-size: 12px;
+    background-position: center;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+}
+
+
+.side-out-flip{
+    transform: rotate(180deg);
+}
+
+#side-out:hover{
+    background-color: white;
+    transition: ease-in .2s;
+    border-color: black;
+}
+.selectButton{
+    font-family: 'Rajdhani', sans-serif;
+    padding: .8em;
+    /* <a target="_blank" href="https://icons8.com/icon/kuUwIi4UBqyH/arrow">Arrow</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+}
+
+.animation-visible{
+    left: 0em !important;
+}
+
+.animation-hidden{
+    left: -22em !important;
+}
+
+.map-location-center{
+    padding: 1em;
+    background-color: white;
+    border: none;
+    margin-top: .5em;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    border: 1px solid rgba(0, 0, 0, 0.14902);
+}
+
+.funJSON{
+    white-space: pre;
+}
+
+.gm-style .gm-style-iw {
+    font-size: 16px;
+    font-weight: bold;
+ }
+
+.titleStyle{
+    color: var(--main-ctc-color);
+}
+.filterStyle{
+    display: list-item;
+}
+
+.filterHidden{
+    display: none;
+}
+.sortStyle{
+    display: list-item;
+}
+
+.sortHidden{
+    display: none;
+}
+
+.sortStyle > button{
+    position: relative;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    margin-bottom: 1em;
+    border-radius: 10%;
+    border: none;
+    color: var(--main-ctc-color);
+}
+
+#big-search-bar{
+    padding: 1em 2em 1em 2em;
+}
+
+.sizeActive , .useActive, .funcActive, .locActive{
+    background-color: var(--main-ctc-color);
+    color: white !important;
+    outline: 1px solid white;
+}
+
+.dynamicCard{
+    background-color: white;
+    color: var(--main-ctc-color);
+    padding: 1px;
+    text-align: center;
+    display: none;
+    border-radius: 10%;
+    padding: 5px;
+}
+main > form{
+    align-self: flex-end;
+    margin-right: 2em;
+    outline: solid 1px var(--main-ctc-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 4em;
+    background-color:var(--main-ctc-color);
+    color: white;
+}
+form> label{
+    font-weight: bold;
+}
+@media screen and (max-width: 980px) {
+    #map{
+        width: 35em;
+        height: 55em;
+    }
+
+    #big-list{
+        max-height: 53em;
+    }
+    
+    header > input:nth-of-type(1){
+        display: none;
+    }
+    
+    header > svg{
+        display: block;
+    }
+    
+    #side-wrapper{
+        left: -22em;
+    }   
+
+    header > img{
+        float: none;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #map{
+        width: 25em;
+        height: 55em;
+    }
+}
