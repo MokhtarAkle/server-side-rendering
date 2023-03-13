@@ -21,23 +21,11 @@
                     <li><button id="filter-button">Filter</button></li>
                     <li class="filterHidden">
                         <p>Filter Op: </p>
+                        <% for(let i = 0; i < 14; i++){ %>
                         <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
-                        <span class="dynamicCard"></span>
+                            <% } %>
                         <p>Locatie: </p>
-                        <input type="checkbox" name="filterDistance" value="distance" id="distanceFilter">
+                        <input type="checkbox" name="filterLoc" value="distance" id="distanceFilter">
                         <label for="distanceFilter">&lt; 5 km </label>
                         <input type="checkbox" name="filterLoc" value="Utrecht" id="utrFilter">
                         <label for="utrFilter">Utrecht</label>

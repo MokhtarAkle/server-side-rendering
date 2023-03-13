@@ -5,7 +5,6 @@ const url = "https://api.codingthecurbs.fdnd.nl/api/v1/smartzones";
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let smartUrl = url 
-
   console.log(smartUrl)
 
   fetchJson(url).then((data) => {

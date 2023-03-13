@@ -28,6 +28,8 @@ var searchForm = document.querySelector("#search-form");
 const media1 = window.matchMedia('(max-width: 980px)');
 const media2 = window.matchMedia('(min-width: 980px)');
 
+const filterLength = document.querySelectorAll("input[type='checkbox']")
+
 var position;
 var myStyles =[
   {
