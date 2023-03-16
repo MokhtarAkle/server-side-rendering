@@ -263,136 +263,136 @@ async function setMarkers(map){
 
 
 
-function populate(usedArray){
-  for (let i = 0; i < usedArray.length; i++){
-    populateName[i].textContent = usedArray[i].name;
-    populateLocation[i].textContent = usedArray[i].location + ", " + usedArray[i].town;
-    populateSize[i].textContent = usedArray[i].size;
-    populateUse[i].textContent = usedArray[i].utilization;
-    populateFunction[i].textContent = usedArray[i].function + " | " + "\r\n" + usedArray[i].function1 + " | " +  usedArray[i].function2 ;
-    listInformation[i].style.display = "block";
-    if(parseInt(usedArray[i].utilization) < 50){
-      populateUse[i].classList.add("lowFill");
-    }
-    else if(parseInt(usedArray[i].utilization) > 50 && parseInt(usedArray[i].utilization) < 75){
-      populateUse[i].classList.add("mediumFill");
-    }
-    else if(parseInt(usedArray[i].utilization) > 75){
-      populateUse[i].classList.add("highFill");
-    }
+// function populate(usedArray){
+//   for (let i = 0; i < usedArray.length; i++){
+//     populateName[i].textContent = usedArray[i].name;
+//     populateLocation[i].textContent = usedArray[i].location + ", " + usedArray[i].town;
+//     populateSize[i].textContent = usedArray[i].size;
+//     populateUse[i].textContent = usedArray[i].utilization;
+//     populateFunction[i].textContent = usedArray[i].function + " | " + "\r\n" + usedArray[i].function1 + " | " +  usedArray[i].function2 ;
+//     listInformation[i].style.display = "block";
+//     if(parseInt(usedArray[i].utilization) < 50){
+//       populateUse[i].classList.add("lowFill");
+//     }
+//     else if(parseInt(usedArray[i].utilization) > 50 && parseInt(usedArray[i].utilization) < 75){
+//       populateUse[i].classList.add("mediumFill");
+//     }
+//     else if(parseInt(usedArray[i].utilization) > 75){
+//       populateUse[i].classList.add("highFill");
+//     }
 
-    if(usedArray[i].function1 == " "){
-      populateFunction[i].textContent = usedArray[i].function
-    }
-    else if(usedArray[i].function2 == " "){
-      populateFunction[i].textContent = usedArray[i].function + " | "  + "\r\n" + usedArray[i].function1
-    }
-  }
-}
+//     if(usedArray[i].function1 == " "){
+//       populateFunction[i].textContent = usedArray[i].function
+//     }
+//     else if(usedArray[i].function2 == " "){
+//       populateFunction[i].textContent = usedArray[i].function + " | "  + "\r\n" + usedArray[i].function1
+//     }
+//   }
+// }
 
-function depopulate(){
-  for (let i = 0; i < populateName.length; i++){
-    populateName[i].textContent = " ";
-    populateLocation[i].textContent = " ";
-    populateSize[i].textContent = " ";
-    populateUse[i].textContent = " ";
-    populateFunction[i].textContent = " ";
-    listInformation[i].style.display = "none";
-    populateUse[i].classList.remove("lowFill", "mediumFill", "highFill");
-  }
-}
+// function depopulate(){
+//   for (let i = 0; i < populateName.length; i++){
+//     populateName[i].textContent = " ";
+//     populateLocation[i].textContent = " ";
+//     populateSize[i].textContent = " ";
+//     populateUse[i].textContent = " ";
+//     populateFunction[i].textContent = " ";
+//     listInformation[i].style.display = "none";
+//     populateUse[i].classList.remove("lowFill", "mediumFill", "highFill");
+//   }
+// }
 
-function depopDynamic(){
-  for (let i = 0; i < dynamicFill.length; i++){
-    dynamicFill[i].textContent = " ";
-    dynamicFill[i].style.display = "none";
-  }
-}
-populate(smartzones);
+// function depopDynamic(){
+//   for (let i = 0; i < dynamicFill.length; i++){
+//     dynamicFill[i].textContent = " ";
+//     dynamicFill[i].style.display = "none";
+//   }
+// }
+// populate(smartzones);
 
-function initSort(){
+// function initSort(){
 
-  sortSize.addEventListener("click", () =>{
-    sortSize.classList.toggle("sizeActive");
-    sortUse.classList.remove("useActive");
-    sortFunc.classList.remove("funcActive");
-    sortLoc.classList.remove("locActive");
-    smartzones.sort((a, b) => {
-  const sizeA = a.size.toUpperCase(); 
-  const sizeB = b.size.toUpperCase(); 
-  if (sizeA < sizeB) {
-  return -1;
-  }
-  if (sizeA > sizeB) {
-  return 1;
-  }
-  depopulate();
-  populate(smartzones);
-  return 0;
-  });
-  });
+//   sortSize.addEventListener("click", () =>{
+//     sortSize.classList.toggle("sizeActive");
+//     sortUse.classList.remove("useActive");
+//     sortFunc.classList.remove("funcActive");
+//     sortLoc.classList.remove("locActive");
+//     smartzones.sort((a, b) => {
+//   const sizeA = a.size.toUpperCase(); 
+//   const sizeB = b.size.toUpperCase(); 
+//   if (sizeA < sizeB) {
+//   return -1;
+//   }
+//   if (sizeA > sizeB) {
+//   return 1;
+//   }
+//   depopulate();
+//   populate(smartzones);
+//   return 0;
+//   });
+//   });
 
-  sortUse.addEventListener("click", () =>{
-    sortUse.classList.toggle("useActive");
-    sortSize.classList.remove("sizeActive");
-    sortFunc.classList.remove("funcActive");
-    sortLoc.classList.remove("locActive");
-    smartzones.sort((a, b) => {
-  const useA = a.utilization.toUpperCase(); 
-  const useB = b.utilization.toUpperCase(); 
-  if (useA < useB) {
-  return -1;
-  }
-  if (useA > useB) {
-  return 1;
-  }
-  depopulate();
-  populate(smartzones);
-  return 0;
-  });
-  });
+//   sortUse.addEventListener("click", () =>{
+//     sortUse.classList.toggle("useActive");
+//     sortSize.classList.remove("sizeActive");
+//     sortFunc.classList.remove("funcActive");
+//     sortLoc.classList.remove("locActive");
+//     smartzones.sort((a, b) => {
+//   const useA = a.utilization.toUpperCase(); 
+//   const useB = b.utilization.toUpperCase(); 
+//   if (useA < useB) {
+//   return -1;
+//   }
+//   if (useA > useB) {
+//   return 1;
+//   }
+//   depopulate();
+//   populate(smartzones);
+//   return 0;
+//   });
+//   });
 
-  sortFunc.addEventListener("click", () =>{
-    sortFunc.classList.toggle("funcActive");
-    sortSize.classList.remove("sizeActive");
-    sortUse.classList.remove("useActive");
-    sortLoc.classList.remove("locActive");
-    smartzones.sort((a, b) => {
-  const funcA = a.function.toUpperCase();
-  const funcB = b.function.toUpperCase();
-  if (funcA < funcB) {
-  return -1;
-  }
-  if (funcA > funcB) {
-  return 1;
-  }
-  depopulate();
-  populate(smartzones);
-  return 0;
-  });
-  });
+//   sortFunc.addEventListener("click", () =>{
+//     sortFunc.classList.toggle("funcActive");
+//     sortSize.classList.remove("sizeActive");
+//     sortUse.classList.remove("useActive");
+//     sortLoc.classList.remove("locActive");
+//     smartzones.sort((a, b) => {
+//   const funcA = a.function.toUpperCase();
+//   const funcB = b.function.toUpperCase();
+//   if (funcA < funcB) {
+//   return -1;
+//   }
+//   if (funcA > funcB) {
+//   return 1;
+//   }
+//   depopulate();
+//   populate(smartzones);
+//   return 0;
+//   });
+//   });
 
-  sortLoc.addEventListener("click", () =>{
-    sortLoc.classList.toggle("locActive");
-    sortSize.classList.remove("sizeActive");
-    sortUse.classList.remove("useActive");
-    sortFunc.classList.remove("funcActive");
-    smartzones.sort((a, b) => {
-  const locA = a.town.toUpperCase();
-  const locB = b.town.toUpperCase();
-  if (locA < locB) {
-  return -1;
-  }
-  if (locA > locB) {
-  return 1;
-  }
-  depopulate();
-  populate(smartzones);
-  return 0;
-  });
-  });
-}
-initSort();
+//   sortLoc.addEventListener("click", () =>{
+//     sortLoc.classList.toggle("locActive");
+//     sortSize.classList.remove("sizeActive");
+//     sortUse.classList.remove("useActive");
+//     sortFunc.classList.remove("funcActive");
+//     smartzones.sort((a, b) => {
+//   const locA = a.town.toUpperCase();
+//   const locB = b.town.toUpperCase();
+//   if (locA < locB) {
+//   return -1;
+//   }
+//   if (locA > locB) {
+//   return 1;
+//   }
+//   depopulate();
+//   populate(smartzones);
+//   return 0;
+//   });
+//   });
+// }
+// initSort();
 function filterTest(){
   
   for (let i = 0; i < checkboxes.length; i++){
