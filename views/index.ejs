@@ -81,6 +81,36 @@
                 <button id="side-out"><span class="sr-only">Extend/Hide button</span></button>
             </div>
         </div>
+
+        <section id="reserve-form">
+            <img src="/images/close-window.png" class="exitButton">
+            <form action="/" method="post">
+                <label for="userInput">Username: </label>
+                <input type="text" name="author" id="userInput">
+
+                <label for="startDInput">Start date: </label>
+                <input required type="date" name="dateStart" id="startDInput">
+
+                <label for="endDInput">End date: </label>
+                <input required type="date" name="dateEnd" id="endDInput">
+
+                <label for="startTInput">Start Time: </label>
+                <input required type="datetime-local" name="timeStart" id="startTInput">
+
+                <label for="endTInput">End Time: </label>
+                <input required type="datetime-local" name="timeEnd" id="endTInput">
+
+                <select required multiple="true" title="Smartzone:" name="smartzoneId">
+                    <optgroup label="Smartzones">
+
+                      <option value="clene4gw60aqg0bunwwpawr1p">Tijn</option>
+
+                    </optgroup>
+                  </select>
+                  
+                <input type="submit" value="Reserve" class="submitButton">  
+            </form>
+        </section>
     </main>
 
 <%- include('./partials/foot') %>

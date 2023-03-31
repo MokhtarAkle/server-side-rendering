@@ -24,6 +24,8 @@ var filterStyling = document.querySelector(".filterHidden");
 var filterButton = document.querySelector("#filter-button");
 var dynamicFill = document.querySelectorAll(".dynamicCard");
 var searchForm = document.querySelector("#search-form");
+let exitButton = document.querySelector(".exitButton");
+let reserveForm = document.querySelector("#reserve-form");
 
 const media1 = window.matchMedia('(max-width: 980px)');
 const media2 = window.matchMedia('(min-width: 980px)');
@@ -228,7 +230,7 @@ async function setMarkers(map){
           "<br> <br>" + "Functie: " + something[i].function + " | <br>" + something[i].function1 + " | " + something[i].function2 +
           "<br> <br>" + "Grootte: " + something[i].size +
           "<br> <br>" + "Gebruik: " + something[i].utilization +
-          "<br> <br>" + "<a href='http://maps.google.com/maps?saddr=52.362440594307465,4.915010541817515&daddr=" + something[i].lat + "," + something[i].lon +"'><img class='directionsButton' src='./assets/directions.svg'></a>";
+          "<br> <br>" + "<a href='http://maps.google.com/maps?saddr=52.362440594307465,4.915010541817515&daddr=" + something[i].lat + "," + something[i].lon +"'><img class='directionsButton' src='/images/directions.svg'></a>";
 
           marker.addListener("click", () => {
             infoWindow.close();
@@ -490,6 +492,21 @@ function filterShow(){
 }
 
 
+// function classToggle(element, class1, class2){
+//   if(element.classList.contains(class1)){
+//     element.classList.toggle(class2);
+//     element.classList.remove(class1);
+//   }
+//   else{
+//     element.classList.toggle(class2);
+//     element.classList.add(class1);
+//   }
+// }
+
+
+function exitReserve(){
+  reserveForm.style.visibility = "hidden";
+}
 
 function preventSubmit(event){
   event.preventDefault();
@@ -502,7 +519,16 @@ buttonSlide.addEventListener("click", classSlide);
 searchIcon.addEventListener("click", searchShow);
 sortButton.addEventListener("click", sortShow);
 filterButton.addEventListener("click", filterShow);
+exitButton.addEventListener("click", exitReserve);
 
 // https://developers.google.com/maps/documentation/javascript
 // https://support.google.com/mymaps/answer/3024454?hl=en&co=GENIE.Platform%3DDesktop#:~:text=Create%20a%20map,map%20a%20name%20and%20description.
 // https://stackoverflow.com/questions/41648702/prevent-marker-from-scaling-when-zoom-out
+
+
+// <% for(let i = 0; i < smartzones.length; i++){ %>
+//   <option value="<%= smartzones[i].id %>" name="smartzoneId"><%= smartzones[i].name %></option>
+//   <% } %>
+
+
+// 

@@ -298,6 +298,52 @@ main > form{
 form> label{
     font-weight: bold;
 }
+
+section{
+    margin-top: 25%;
+    position: absolute;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 4em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Roboto', sans-serif;
+}
+
+section > form{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 15em;
+    color: var(--main-ctc-color)
+
+}
+
+section > form > input, section > form > select{
+    color: var(--main-ctc-color);
+    border: none;
+    outline: 1px solid grey;
+
+}
+section > form > label, section > form > select { 
+    margin-top: .5em;
+}
+
+.submitButton{
+    border-radius: 10%;
+    margin-top: .5em;
+    border: none;
+    outline: 1px solid white;
+    color: var(--main-ctc-color);
+    padding: .5em;
+}
+
+section > img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.5em;
+}
 @media screen and (max-width: 980px) {
     #map{
         width: 35em;
