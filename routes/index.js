@@ -20,7 +20,6 @@ router.post('/', (request, response) => {
 
   postJson(url1, request.body).then((data) => {
     let newZone = { ... request.body }
-    console.log(request.body)
     console.log(data)
     if (data.success) {
       response.redirect('/?memberPosted=true') 
@@ -31,7 +30,6 @@ router.post('/', (request, response) => {
       const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`
       const newdata = { error: errormessage, values: newZone }
 
-      console.log(newdata)
     }
   })
 })
