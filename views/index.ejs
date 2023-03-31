@@ -103,7 +103,9 @@
                 <select required multiple="true" title="Smartzone:" name="smartzoneId">
                     <optgroup label="Smartzones">
 
-                      <option value="clene4gw60aqg0bunwwpawr1p">Tijn</option>
+                        <% for(let i = 0; i < smartzones.length; i++){ %>
+                            <option value="<%= smartzones[i].id %>" name="smartzoneId"><%= smartzones[i].name %></option>
+                            <% } %>
 
                     </optgroup>
                   </select>

@@ -69,8 +69,8 @@ header > p{
 
 #map{
     margin-top: 2em;
-    width: 60em;
-    height: 45em;
+    width: 98vw;
+    height: 100vh;
 
 }
 
@@ -294,13 +294,14 @@ main > form{
     padding: 4em;
     background-color:var(--main-ctc-color);
     color: white;
+    
 }
 form> label{
     font-weight: bold;
 }
 
 section{
-    margin-top: 25%;
+    margin-top: 15em;
     position: absolute;
     width: 50%;
     display: flex;
