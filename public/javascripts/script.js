@@ -26,6 +26,7 @@ var dynamicFill = document.querySelectorAll(".dynamicCard");
 var searchForm = document.querySelector("#search-form");
 let exitButton = document.querySelector(".exitButton");
 let reserveForm = document.querySelector("#reserve-form");
+let reserveButton = document.querySelector(".reserveButton");
 
 const media1 = window.matchMedia('(max-width: 980px)');
 const media2 = window.matchMedia('(min-width: 980px)');
@@ -504,8 +505,16 @@ function filterShow(){
 // }
 
 
-function exitReserve(){
-  reserveForm.style.visibility = "hidden";
+function toggleReserve(){
+    if(reserveForm.classList.contains("reserveHidden")){
+      reserveForm.classList.toggle("reserveStyle");
+      reserveForm.classList.remove("reserveHidden");
+    }
+    else{
+      reserveForm.classList.toggle("reserveStyle");
+      reserveForm.classList.add("reserveHidden");
+    }
+
 }
 
 function preventSubmit(event){
@@ -516,10 +525,11 @@ searchForm.addEventListener('submit', preventSubmit);
 
 window.initMap = initMap;
 buttonSlide.addEventListener("click", classSlide);
-searchIcon.addEventListener("click", searchShow);
+// searchIcon.addEventListener("click", searchShow);
 sortButton.addEventListener("click", sortShow);
 filterButton.addEventListener("click", filterShow);
-exitButton.addEventListener("click", exitReserve);
+exitButton.addEventListener("click", toggleReserve);
+reserveButton.addEventListener("click", toggleReserve);
 
 // https://developers.google.com/maps/documentation/javascript
 // https://support.google.com/mymaps/answer/3024454?hl=en&co=GENIE.Platform%3DDesktop#:~:text=Create%20a%20map,map%20a%20name%20and%20description.

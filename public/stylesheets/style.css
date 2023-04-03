@@ -3,6 +3,7 @@
 
 :root{
     --main-ctc-color: #4F52C9;
+    --secondary-ctc-color: white;
 }
 
 *{
@@ -17,12 +18,13 @@ body{
 
 header{
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 1em;
-    background-color: var(--main-ctc-color);
-    margin-bottom: 2em;
-    width: 100%;
+    background-color: var(--secondary-ctc-color);
+    width: 18.5%;
     text-align: center;
+    position: absolute;
+    z-index: 2;
 }
 
 header > img{
@@ -48,7 +50,7 @@ header > input:nth-of-type(1){
 }
 
 header > p{
-    color: white;
+    color: var(--main-ctc-color);;
     font-family: 'Rajdhani', sans-serif;
     font-size: 24px;
 }
@@ -68,10 +70,8 @@ header > p{
 }
 
 #map{
-    margin-top: 2em;
-    width: 98vw;
+    width: 99vw;
     height: 100vh;
-
 }
 
 main{
@@ -82,23 +82,20 @@ main{
 #big-wrapper{
     position: relative;
     overflow: hidden;
-
 }
 #big-list{
     display: flex;
     flex-flow: row wrap;
     max-width: 20em;
     width: 20em;
-    background-color: var(--main-ctc-color);
-    color: white;
+    background-color: var(--secondary-ctc-color);
+    color: var(--main-ctc-color);;
     position: relative;
-    top: -1em;
     padding: 1em;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 45em;
-    left: 0em;
-    margin-top: 3em;
+    max-height: 100vh;
+    top: -2em;
 }
 
 #big-list > li:nth-of-type(1), #big-list > li:nth-of-type(2){
@@ -107,7 +104,7 @@ main{
 }
 
 #big-list > li:nth-of-type(1)::after, #big-list > li:nth-of-type(2)::after{
-    background: var(--main-ctc-color);
+    background: var(--secondary-ctc-color);
  }
 
 #big-list > li:nth-of-type(1) button, #big-list > li:nth-of-type(2) button{
@@ -135,7 +132,7 @@ li::after{
     content: "";
     position: absolute;
     height: 1px;
-    background: white;
+    background: var(--main-ctc-color);;
     width: 90%;
     top: 100%;
     left: 50%;
@@ -153,15 +150,17 @@ li> button{
     position: absolute;
     top: 50%;
     left: 75%;
-    border-radius: 10%;
+    border-radius: 40px;
     border: none;
     color: var(--main-ctc-color);
+    outline:  var(--main-ctc-color) solid 2px;
+    background-color: white;
 }
 
 li> button:hover{
-    background-color: var(--main-ctc-color);
+    background-color: var(--secondary-ctc-color);
     transition: ease .2s;
-    color: white;
+    color: var(--main-ctc-color);;
     outline: 1px solid white;
 }
 li> p:nth-of-type(1){
@@ -212,6 +211,11 @@ li> p:nth-of-type(1){
     /* <a target="_blank" href="https://icons8.com/icon/kuUwIi4UBqyH/arrow">Arrow</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
 }
 
+.reserveButton{
+    padding: .8em;
+    margin-top: 4em;
+}
+
 .animation-visible{
     left: 0em !important;
 }
@@ -239,7 +243,7 @@ li> p:nth-of-type(1){
  }
 
 .titleStyle{
-    color: var(--main-ctc-color);
+    color: var(--secondary-ctc-color);
 }
 .filterStyle{
     display: list-item;
@@ -264,7 +268,7 @@ li> p:nth-of-type(1){
     margin-bottom: 1em;
     border-radius: 10%;
     border: none;
-    color: var(--main-ctc-color);
+    color: var(--secondary-ctc-color);
 }
 
 #big-search-bar{
@@ -272,14 +276,14 @@ li> p:nth-of-type(1){
 }
 
 .sizeActive , .useActive, .funcActive, .locActive{
-    background-color: var(--main-ctc-color);
+    background-color: var(--secondary-ctc-color);
     color: white !important;
     outline: 1px solid white;
 }
 
 .dynamicCard{
     background-color: white;
-    color: var(--main-ctc-color);
+    color: var(--secondary-ctc-color);
     padding: 1px;
     text-align: center;
     display: none;
@@ -289,11 +293,13 @@ li> p:nth-of-type(1){
 main > form{
     align-self: flex-end;
     margin-right: 2em;
-    outline: solid 1px var(--main-ctc-color);
+    outline: solid 1px var(--secondary-ctc-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 4em;
-    background-color:var(--main-ctc-color);
+    padding: 2em;
+    background-color:var(--secondary-ctc-color);
     color: white;
+    position: absolute;
+    z-index: 2;
     
 }
 form> label{
@@ -310,13 +316,14 @@ section{
     padding: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Roboto', sans-serif;
+    visibility: hidden;
 }
 
 section > form{
     display: flex;
     flex-flow: column nowrap;
     width: 15em;
-    color: var(--main-ctc-color)
+    color: var(--main-ctc-color);
 
 }
 
@@ -324,6 +331,7 @@ section > form > input, section > form > select{
     color: var(--main-ctc-color);
     border: none;
     outline: 1px solid grey;
+   
 
 }
 section > form > label, section > form > select { 
@@ -344,6 +352,18 @@ section > img{
     top: 0;
     right: 0;
     width: 2.5em;
+}
+
+.exitButton{
+    cursor: pointer;
+}
+
+.reserveStyle{
+    visibility: visible;
+}
+
+.reserveHidden{
+    visibility: hidden;
 }
 @media screen and (max-width: 980px) {
     #map{
