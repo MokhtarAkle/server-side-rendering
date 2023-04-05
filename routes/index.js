@@ -20,11 +20,10 @@ router.post('/', (request, response) => {
 
   postJson(url1, request.body).then((data) => {
     let newZone = { ... request.body }
-    console.log(data)
+    console.log(newZone)
     if (data.success) {
       response.redirect('/?memberPosted=true') 
-      // TODO: squad meegeven, message meegeven
-      // TODO: Toast meegeven aan de homepagina
+
 
     } else {
       const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`

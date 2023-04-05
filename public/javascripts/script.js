@@ -115,39 +115,39 @@ const options = {
   fields: ["address_components", "geometry", "icon", "name"],
   strictBounds: false,
 };
-const autocomplete = new google.maps.places.Autocomplete(input, options);
-google.maps.event.addListener(autocomplete, 'place_changed', function () {
-  const place = autocomplete.getPlace();
+// const autocomplete = new google.maps.places.Autocomplete(input, options);
+// google.maps.event.addListener(autocomplete, 'place_changed', function () {
+//   const place = autocomplete.getPlace();
 
-  markers = [];
+//   markers = [];
 
-  const icon = {
-    url: place.icon,
-    size: new google.maps.Size(71, 71),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(25, 25),
-  };
+//   const icon = {
+//     url: place.icon,
+//     size: new google.maps.Size(71, 71),
+//     origin: new google.maps.Point(0, 0),
+//     anchor: new google.maps.Point(17, 34),
+//     scaledSize: new google.maps.Size(25, 25),
+//   };
 
-  markers.push(
-    new google.maps.Marker({
-      map,
-      icon,
-      title: place.name,
-      position: place.geometry.location,
-    })
-  );
-  map.setCenter(place.geometry.location);
-  map.setZoom(12);
-  if(listAnimation.classList.contains("animation-hidden")){
+//   markers.push(
+//     new google.maps.Marker({
+//       map,
+//       icon,
+//       title: place.name,
+//       position: place.geometry.location,
+//     })
+//   );
+//   map.setCenter(place.geometry.location);
+//   map.setZoom(12);
+//   if(listAnimation.classList.contains("animation-hidden")){
 
-  }
-  else{
-    listAnimation.classList.toggle("animation-hidden");
-    listAnimation.classList.remove("animation-visible");
-    buttonSlide.classList.toggle("side-out-flip");
-  };
-});
+//   }
+//   else{
+//     listAnimation.classList.toggle("animation-hidden");
+//     listAnimation.classList.remove("animation-visible");
+//     buttonSlide.classList.toggle("side-out-flip");
+//   };
+// });
 
 
 }
@@ -521,7 +521,7 @@ function preventSubmit(event){
   event.preventDefault();
 };
 
-searchForm.addEventListener('submit', preventSubmit);
+// searchForm.addEventListener('submit', preventSubmit);
 
 window.initMap = initMap;
 buttonSlide.addEventListener("click", classSlide);
