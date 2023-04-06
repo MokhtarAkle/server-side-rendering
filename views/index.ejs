@@ -16,9 +16,14 @@
             <div id="map"></div>
             <div id="side-wrapper">
                 <ul id="big-list">
-                    <img src="/images/CTC_FULL_BLUE.png" alt="CTC brand logo">
-                    <li><button id="sort-button">Sorteer</button></li>
-                    <li><button id="filter-button">Filter</button></li>
+                    <div id="stick-top">
+                        <img src="/images/CTC_FULL_BLUE.png" alt="CTC brand logo">
+                        <div class="buttonHolder" id="top-holder">
+                            <button id="sort-button">Sorteer</button>
+                            <button id="filter-button">Filter</button>
+                        </div>
+                    </div>
+
                     <li class="filterHidden">
                         <p>Filter Op: </p>
                         <% for(let i = 0; i < 14; i++){ %>
@@ -63,18 +68,24 @@
                         <button class="sortFunc">Functie</button>
                         <button class="sortLoc">Locatie</button>
                     </li>
-
                     <% for(let i = 0; i < smartzones.length; i++){ %>
                       <li class="zoneInfo">
                         <p>Smartzone: <span> <%= smartzones[i].name %> </span></p>
+                        <% for (const [key, value] of Object.entries(smartzones[i].reservations[i].dateStart || {})) {   %>
+                            <p> <%- console.log(value) %> </p>
+                              <% } %>
+                              
 
+                          
                         <p>Locatie: <span> <%= smartzones[i].town %> </span></p>
                         <p>Adres: <span> <%= smartzones[i].address %> </span></p>
                         <p>Functie: <span><%= smartzones[i].utilization %></span></p>
-                        <p>Grootte: <span> <%= smartzones[i].size %> </span></p>
+                        <!-- <p>Grootte: <span> <%= smartzones[i].size %> </span></p> -->
                         <p>Gebruik: <span class="useJSON"></span></p>
-                        <button class="selectButton">Selecteer</button>
-                        <button class="reserveButton">Reserveer</button>
+                        <div class="buttonHolder">
+                            <button class="selectButton">Selecteer</button>
+                            <button class="reserveButton">Reserveer</button>
+                        </div>
                         </li>
                       <% } %>
 

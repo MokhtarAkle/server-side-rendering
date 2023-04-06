@@ -73,7 +73,7 @@ header > p{
 
 #map{
     width: 96vw;
-    height: 96vh;
+    height: 93vh;
     border-radius: 1em;
 }
 
@@ -89,6 +89,7 @@ main{
     box-shadow: -1px 0px 13px 5px rgba(224,224,224,1);
     border-radius: 1em;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #big-list{
@@ -123,7 +124,7 @@ main{
 
 }
 
-#big-list > img{
+#stick-top > img{
     margin-left: 50%;
     transform: translateX(-50%);
     width: 15em;
@@ -143,12 +144,13 @@ li{
     list-style-type: none;
     flex-grow: 1;
     margin: 1em;
-    box-shadow: 4px 7px 15px 1px rgba(150,150,150,1);
+    box-shadow: 4px 7px 10px 1px rgba(150,150,150,1);
     border-radius: 1em;
     padding: 1em;
+    color: black;
 }
 
-li::after{
+/* li::after{
     content: "";
     position: absolute;
     height: 1px;
@@ -158,30 +160,59 @@ li::after{
     left: 50%;
     transform: translateX(-50%);
     margin-top: .5em;
-}
+} */
 
+#stick-top{
+    width: 100%;
+    position: sticky;
+    top: -1em;
+    background-color: white;
+    z-index: 2;
+    padding-bottom: 1em;
+}
 li> p{
     font-family: 'Roboto', sans-serif;
     
 }
 
+.buttonHolder{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0.75em
+}
 
-li> button{
-    position: absolute;
-    top: 50%;
-    left: 65%;
+li> div> button{
     border-radius: 40px;
     border: none;
     color: var(--main-ctc-color);
     outline:  var(--main-ctc-color) solid 2px;
     background-color: white;
     cursor: pointer;
+    max-height: 3.5em;
+    width: 6em;
+    font-weight: bold;
+
 }
 
-li:nth-of-type(6) > button:nth-of-type(2){
-    background: linear-gradient(to right, rgba(79,81,201,1) 0%, rgba(79,81,201,1) 40%, rgba(79,81,201,1) 44%, rgba(133,34,199,1) 100%);
-    color: white;
+#top-holder{
+    width: 100%;
+    padding-left: 2em;
 }
+
+#top-holder > button{
+    border-radius: 40px;
+    border: none;
+    color: var(--main-ctc-color);
+    outline:  var(--main-ctc-color) solid 2px;
+    background-color: white;
+    cursor: pointer;
+    max-height: 3.5em;
+    padding: 0.5em;
+    width: 6em;
+}
+
 
 li> button:hover{
     background-color: var(--secondary-ctc-color);
@@ -192,7 +223,10 @@ li> button:hover{
 li> p:nth-of-type(1){
     font-family: 'Rajdhani', sans-serif;
     font-size: 22px;
+    font-weight: bold;
 }
+
+
 
 #big-list > li:nth-of-type(1), #big-list > li:nth-of-type(2){
     margin: 0em;
@@ -245,13 +279,14 @@ li> p:nth-of-type(1){
 }
 .selectButton{
     font-family: 'Rajdhani', sans-serif;
-    padding: .8em;
+    padding: .5em;
     /* <a target="_blank" href="https://icons8.com/icon/kuUwIi4UBqyH/arrow">Arrow</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
 }
 
 .reserveButton{
-    padding: .8em;
-    margin-top: 4em;
+    padding: .5em;
+    background: linear-gradient(to right, rgba(79,81,201,1) 0%, rgba(79,81,201,1) 40%, rgba(79,81,201,1) 44%, rgba(133,34,199,1) 100%);
+    color: white;
 }
 
 .animation-visible{
@@ -397,12 +432,36 @@ section > img{
 }
 
 .reserveStyle{
+    transform: scale(1);
+    transition: .5s ease-in-out;
     visibility: visible;
 }
 
 .reserveHidden{
+    transform: scale(0);
+    transition: .5s ease-in-out;
     visibility: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 @media screen and (max-width: 980px) {
     #map{
         width: 35em;
