@@ -71,11 +71,8 @@
                     <% for(let i = 0; i < smartzones.length; i++){ %>
                       <li class="zoneInfo">
                         <p>Smartzone: <span> <%= smartzones[i].name %> </span></p>
-                        <% for (const [key, value] of Object.entries(smartzones[i].reservations[i].dateStart || {})) {   %>
-                            <p> <%- console.log(value) %> </p>
-                              <% } %>
+                              <%- console.log(smartzones[i].reservations[i]) %>
                               
-
                           
                         <p>Locatie: <span> <%= smartzones[i].town %> </span></p>
                         <p>Adres: <span> <%= smartzones[i].address %> </span></p>
