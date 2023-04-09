@@ -99,7 +99,7 @@ function initMap() {
   }
 ;
 
-const input = document.querySelector("#big-search-bar");
+// const input = document.querySelector("#big-search-bar");
 
 
 
@@ -109,12 +109,12 @@ const defaultBounds = {
   east: 7.5,
   west: 3,
 };
-const options = {
-  bounds: defaultBounds,
-  componentRestrictions: { country: "nl" },
-  fields: ["address_components", "geometry", "icon", "name"],
-  strictBounds: false,
-};
+// const options = {
+//   bounds: defaultBounds,
+//   componentRestrictions: { country: "nl" },
+//   fields: ["address_components", "geometry", "icon", "name"],
+//   strictBounds: false,
+// };
 // const autocomplete = new google.maps.places.Autocomplete(input, options);
 // google.maps.event.addListener(autocomplete, 'place_changed', function () {
 //   const place = autocomplete.getPlace();
