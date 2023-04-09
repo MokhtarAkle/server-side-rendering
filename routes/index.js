@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
-require('dotenv').config()
 
-console.log(process.env.BASE_URL);
-const url = '${process.env.BASE_URL}/smartzones';
-const baseurl = '${process.env.BASE_URL}';
+const url = `${process.env.API_URL}/smartzones`;
+const baseurl = `${process.env.API_URL}`;
 
 
 
