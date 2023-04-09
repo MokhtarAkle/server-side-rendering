@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const url = "https://api.codingthecurbs.fdnd.nl/api/v1/smartzones";
-const baseurl = "https://api.codingthecurbs.fdnd.nl/api/v1"
+require('dotenv').config()
+
+console.log(process.env.BASE_URL);
+const url = '${process.env.BASE_URL}/smartzones';
+const baseurl = '${process.env.BASE_URL}';
+
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
