@@ -1,5 +1,3 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
-
 # Overzet Coding the Curbs map naar server-side
 
 ![image](https://user-images.githubusercontent.com/45001009/225781915-bd205a6e-21b5-4fa3-9a77-a9a045f21096.png)
@@ -24,7 +22,7 @@ De focus van deze sprint lag op het overzetten van je bestaande project naar een
 Node is een onderliggend framework dat er voor zorgt dat we server side code kunnen schrijven en gebruik kunnen maken van verschillende modules zoals Express en EJS. 
 
 ### Express
-We gebruiken Express als framework voor onze projecten. Met express kunnen we verschillende routes aanmaken waarin we content kunnen aanbieden als webpaginas. Ook kunnen we gebruik maken van een view engine doormiddel van Express om de opmaak van de HTML makkelijker te maken. Verder kan je statische bestanden aanbieden door een statische route aan te geven via express. Doormiddel van de statische mappen 
+We gebruiken Express als framework voor onze projecten. Met express kunnen we verschillende routes aanmaken waarin we content kunnen aanbieden als webpaginas. Ook kunnen we gebruik maken van een view engine door middel van Express om de opmaak van de HTML makkelijker te maken. Verder kan je statische bestanden aanbieden door een statische route aan te geven via express. Door middel van de statische mappen 
 
 ![image](https://user-images.githubusercontent.com/45001009/225786527-0d9b018c-66f6-4832-a38a-f345acda4c6b.png)
 
